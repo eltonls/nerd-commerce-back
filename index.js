@@ -1,12 +1,16 @@
 import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
 const app = express();
 
-app.get("/", (_, res) => {
-  res.send("Hello world!");
-});
+const corsConfig = {
+  origin: "http://localhost:3000"
+}
 
-app.listen("8080", () => {
-  console.log("Listenning on port 8080");
-});
+app.use(cors(corsConfig));
+app.use(bodyParser.json());
 
-export default app;
+const PORT = process.env.PORT | 8000;
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+})
