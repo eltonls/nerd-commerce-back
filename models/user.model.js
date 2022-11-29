@@ -29,7 +29,11 @@ module.exports = (sequelize) => {
     cart: {
       type: DataTypes.ARRAY(DataTypes.INTEGER), // Array with productIds
       allowNull: true,
-    }
+    },
+    wishlist: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      allowNull: true,
+    },
   }, {
     sequelize,
     modelName: "User"
