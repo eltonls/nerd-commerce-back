@@ -6,8 +6,6 @@ app.get("/", (_, res) => {
   res.send("Parece que funciona")
 })
 
-console.log("Changes")
-
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`)
 })
